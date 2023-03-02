@@ -16,6 +16,11 @@ export const tagsContainer = style({
   display: "flex",
   gap: vars.margins.medium,
   flexWrap: "wrap",
+  "@media": {
+    "(max-width: 660px)": {
+      gap: vars.margins.small,
+    },
+  },
 });
 
 export const itemsContainer = style({

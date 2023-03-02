@@ -1,5 +1,7 @@
 import { createTheme, globalFontFace, globalStyle, style } from "@vanilla-extract/css";
 
+import SourceCodeProUrl from "./fonts/SourceCodePro-Regular.woff2";
+
 const [themeClass, vars] = createTheme({
   colors: {
     white: "#FFF",
@@ -32,7 +34,7 @@ const [themeClass, vars] = createTheme({
 });
 
 globalFontFace("Source Code Pro", {
-  src: 'url("./font/SourceCodePro-Regular.ttf")',
+  src: `url('${SourceCodeProUrl}') format('woff2')`,
 });
 
 globalStyle("body", {

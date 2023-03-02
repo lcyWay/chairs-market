@@ -17,7 +17,7 @@ module.exports = {
     filename: "bundle.js",
   },
   resolve: {
-    extensions: [".js", ".ts", ".tsx"],
+    extensions: [".js", ".ts", ".tsx", "woff2"],
     plugins: [
       new TsconfigPathsPlugin({
         configFile: path.resolve(__dirname, "tsconfig.json"),
@@ -27,6 +27,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, "public/index.html"),
+      favicon: path.resolve(__dirname, "public/logo.png"),
       minify: !isDev,
     }),
     new BaseHrefWebpackPlugin({ baseHref: "/" }),
@@ -78,6 +79,13 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.woff2$/i,
+        exclude: /node_modules/,
+        use: {
+          loader: "url-loader",
+        },
       },
     ],
   },
