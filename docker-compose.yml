@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  postgres-chairs:
+    image: postgres:15.2
+    restart: always
+    environment:
+      POSTGRES_DB: "chairs"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "123321"
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+    ports:
+      - "5555:5432"
+
+  redis-chairs:
+    image: redis:7.0.8
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-chairs:/data
+
+volumes:
+  redis-chairs:
+    driver: local

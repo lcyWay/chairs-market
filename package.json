@@ -1,0 +1,11 @@
+{
+  "name": "chairs",
+  "version": "1.0.0",
+  "scripts": {
+    "frontend": "cd packages/frontend && npm run dev",
+    "backend": "cd packages/backend && node index"
+  },
+  "workspaces": [
+    "./packages/*"
+  ]
+}
