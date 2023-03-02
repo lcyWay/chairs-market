@@ -12,9 +12,11 @@ const app = express();
 
 const port = process.env.PORT || 9876;
 
-console.log(process.env.REDIS_SERVICE_PORT, process.env.REDIS_SERVICE_HOSTNAME);
-
-const redisClient = redis.createClient(process.env.REDIS_SERVICE_PORT, process.env.REDIS_SERVICE_HOSTNAME);
+const redisClient = redis.createClient(
+  process.env.REDIS_URL && {
+    url: process.env.REDIS_URL,
+  }
+);
 redisClient.connect().catch(console.error);
 
 app.use(
