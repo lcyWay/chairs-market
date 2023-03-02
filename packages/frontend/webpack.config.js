@@ -33,7 +33,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new VanillaExtractPlugin(),
     new MiniCssExtractPlugin(),
-    new Dotenv(),
+    new Dotenv({ systemvars: true }),
   ],
   devServer: {
     port: 3000,
