@@ -1,6 +1,6 @@
 type BaseApiResponse<RequestResponse> = { success: true; data: RequestResponse } | { success: false };
 
-const BASE_API = process.env.BASE_API;
+const BASE_API = process.env.BACKEND_API;
 
 export abstract class ApiAbstractClass {
   protected async makeRequest<RequestResponse>(
