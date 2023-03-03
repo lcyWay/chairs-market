@@ -1,6 +1,10 @@
 {
   "name": "chairs-backend",
   "version": "1.0.0",
+  "scripts": {
+    "prod": "node index",
+    "dev": "cross-env NODE_ENV=development node index"
+  },
   "dependencies": {
     "connect-redis": "^7.0.0",
     "cors": "^2.8.5",
