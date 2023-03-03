@@ -22,7 +22,7 @@ redisClient.connect().catch(console.error);
 app.use(
   session({
     store: new RedisStore({ client: redisClient }),
-    secret: "secret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
