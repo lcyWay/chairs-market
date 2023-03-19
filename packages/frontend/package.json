@@ -5,7 +5,8 @@
     "dev": "cross-env NODE_ENV=development webpack serve --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "cypress": "cypress open",
-    "jest": "jest --watchAll",
+    "jest": "jest",
+    "jest-watch": "jest --watchAll",
     "coverage": "jest --collect-coverage"
   },
   "dependencies": {
@@ -49,6 +50,7 @@
     "jest": "^29.5.0",
     "jest-fetch-mock": "^3.0.3",
     "mini-css-extract-plugin": "^2.6.1",
+    "prettier": "^2.8.4",
     "ts-jest": "^29.0.5",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "^4.8.4",

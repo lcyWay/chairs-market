@@ -1,0 +1,8 @@
+{
+  "tabWidth": 2,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "singleQuote": false,
+  "endOfLine": "crlf",
+  "printWidth": 120
+}
