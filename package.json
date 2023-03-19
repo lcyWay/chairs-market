@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "frontend": "cd packages/frontend && npm run dev",
-    "backend": "cd packages/backend && node index"
+    "backend": "cd packages/backend && npm run dev",
+    "jest": "cd packages/frontend && npm run jest",
+    "cypress": "cd packages/frontend && npm run cypress",
+    "coverage": "cd packages/frontend && npm run coverage"
   },
   "workspaces": [
     "./packages/*"

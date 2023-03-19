@@ -35,7 +35,7 @@ function HomeView() {
           ))}
         </div>
       </div>
-      <div className={itemsContainer}>
+      <div className={itemsContainer} data-test="chairs-container">
         {GlobalStorage.chairsLoading && new Array(8).fill(1).map((_, index) => <MarketChairLoading key={index} />)}
         {GlobalStorage.chairs.map((chair) => (
           <MarketChair

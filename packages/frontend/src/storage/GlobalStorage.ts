@@ -29,11 +29,6 @@ class GlobalStorageClass extends ApiAbstractClass {
   chairs: ChairInterface[] = [];
 
   @action.bound
-  setTags(tags: TagInterface[]) {
-    this.tags = tags;
-  }
-
-  @action.bound
   changeSelectedTags(id: string) {
     const foundIndex = this.selectedTags.findIndex((tag) => tag === id);
     foundIndex === -1 ? this.selectedTags.push(id) : this.selectedTags.splice(foundIndex, 1);
@@ -48,12 +43,6 @@ class GlobalStorageClass extends ApiAbstractClass {
   }
 
   @action.bound
-  setChairs(chairs: ChairInterface[]) {
-    this.chairs = chairs;
-    BasketStorage.validateBasket();
-  }
-
-  @action.bound
   async loadChairs() {
     this.chairsLoading = true;
     this.chairs = [];
@@ -63,7 +52,8 @@ class GlobalStorageClass extends ApiAbstractClass {
     });
     this.chairsLoading = false;
     if (!result.success) return;
-    this.setChairs(result.data);
+    this.chairs = result.data;
+    BasketStorage.validateBasket();
   }
 
   @action.bound
@@ -72,7 +62,7 @@ class GlobalStorageClass extends ApiAbstractClass {
     const result = await this.makeRequest<TagInterface[]>("/tags");
     this.tagsLoading = false;
     if (!result.success) return;
-    this.setTags(result.data);
+    this.tags = result.data;
   }
 }
 

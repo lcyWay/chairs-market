@@ -18,9 +18,14 @@ export abstract class ApiAbstractClass {
 
     if (!result.ok) return { success: false };
 
-    const response = await result.json();
+    let response;
+    try {
+      response = await result.json();
+    } catch (error) {
+      return { success: false };
+    }
 
-    if (typeof response !== "object" || !response.success) return { success: false };
+    if (response === null || typeof response !== "object" || !response.success) return { success: false };
 
     return { success: true, data: response.data };
   }

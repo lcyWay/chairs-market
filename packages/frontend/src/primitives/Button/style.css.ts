@@ -9,6 +9,7 @@ const buttonStyles = style({
   fontFamily: vars.fontFamily,
   padding: `${vars.margins.small} ${vars.margins.medium}`,
   cursor: "pointer",
+  whiteSpace: "nowrap",
   transition: `background ${vars.transition}, color ${vars.transition}`,
   ":disabled": {
     cursor: "default",

@@ -6,7 +6,7 @@ import { BasketChairInterface, BasketInterface } from "types/basket";
 
 import { GlobalStorage } from "./GlobalStorage";
 
-const DELIVERY_PRICE = 1000;
+export const DELIVERY_PRICE = 1000;
 
 class BasketStorageClass extends ApiAbstractClass {
   constructor() {
